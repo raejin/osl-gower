@@ -1,0 +1,34 @@
+{
+  "name": "OSL-gower",
+  "version": "0.0.1",
+  "description": "OSL gower helpful tool",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server && npm run watch",
+    "watch": "nodemon --exec 'npm run build' --watch src",
+    "server": "scripts/server.js",
+    "build": "rm -rf ./dist; mkdir -p dist; browserify -t reactify -d ./src/main.js > ./dist/main.js; cp -f ./src/index.html ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:raejin/osl-gower.git"
+  },
+  "author": "Rae Liu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raejin/osl-gower/issues"
+  },
+  "homepage": "https://github.com/raejin/osl-gower",
+  "dependencies": {
+    "finalhandler": "^0.4.0",
+    "http-server": "^0.8.0",
+    "jquery": "^2.1.4",
+    "react": "^0.13.3",
+    "reactify": "^1.1.1",
+    "serve-static": "^1.10.0"
+  },
+  "devDependencies": {
+    "browserify": "^11.0.1",
+    "nodemon": "^1.4.0"
+  }
+}
