@@ -21,8 +21,8 @@ function createiCal() {
         icalEvent.setSummary(act.name);
         icalEvent.setLocation(stageSchedule.name);
         icalEvent.setDate(Moment(daySchedule.date + ' ' + act.start + 'pm',
-              'YYYY-MM-DD hA').toDate(), Moment(daySchedule.date + ' ' + act.end + 'pm',
-              'YYYY-MM-DD hA').toDate());
+              'YYYY-MM-DD h:mmA').toDate(), Moment(daySchedule.date + ' ' + act.end + 'pm',
+              'YYYY-MM-DD h:mmA').toDate());
       });
     });
   });
@@ -49,9 +49,9 @@ $(document).ready(function () {
         return stageSchedule.schedule.map(function (act) {
           return {
             start: Moment(daySchedule.date + ' ' + act.start + 'pm',
-                'YYYY-MM-DD hA').format(),
+                'YYYY-MM-DD h:mmA').format(),
             end: Moment(daySchedule.date + ' ' + act.end + 'pm',
-                'YYYY-MM-DD hA').format(),
+                'YYYY-MM-DD h:mmA').format(),
             title: act.name
           }
         });
