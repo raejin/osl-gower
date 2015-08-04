@@ -7,7 +7,7 @@
     "start": "npm run server && npm run watch",
     "watch": "nodemon --exec 'npm run build' --watch src",
     "server": "scripts/server.js",
-    "build": "rm -rf ./dist; mkdir -p dist; browserify -t reactify -d ./src/main.js > ./dist/main.js; cp -f ./src/index.html ./dist"
+    "build": "rm -rf ./dist; mkdir -p dist;NODE_PATH=src/ browserify -t reactify -d ./src/main.js > ./dist/main.js; cp -f ./src/index.html ./src/site.css ./node_modules/fullcalendar/dist/fullcalendar.min.css ./dist"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,14 @@
   },
   "homepage": "https://github.com/raejin/osl-gower",
   "dependencies": {
+    "filesaver.js": "^0.2.0",
     "finalhandler": "^0.4.0",
+    "fullcalendar": "arshaw/fullcalendar",
     "http-server": "^0.8.0",
+    "icalendar": "^0.7.1",
     "jquery": "^2.1.4",
+    "lodash": "^3.10.0",
+    "moment": "^2.10.6",
     "react": "^0.13.3",
     "reactify": "^1.1.1",
     "serve-static": "^1.10.0"
