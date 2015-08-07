@@ -74,9 +74,7 @@ $(document).ready(function () {
     eventClick: function(calEvent) {
       $(this).toggleClass('selected');
       if (_.includes(selectedBand, calEvent.title)) {
-        selectedBand = _.remove(selectedBand, function (ev) {
-          return _.includes(selectedBand, calEvent.title);
-        });
+        selectedBand = _.remove(selectedBand, calEvent.title);
       } else {
         selectedBand.push(calEvent.title);
       }
